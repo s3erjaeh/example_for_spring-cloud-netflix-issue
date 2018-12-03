@@ -1,5 +1,5 @@
-# spring-cloud-netflix-issue-
-this is a reproducing of issue: https://github.com/spring-cloud/spring-cloud-netflix/issues/
+# spring-cloud-netflix-issue-3300
+this is a reproducing of issue: https://github.com/spring-cloud/spring-cloud-netflix/issues/3300
 
 launch ZuulApplication and MockServerApplication.
 
@@ -10,7 +10,7 @@ request to reproduce:
      -H 'content-type: multipart/form-data;' \
      -F key=value
   ```
-actual:   "name = hello world,hello world"
+actual:   "name = hello world,hello world"\
 expected: "name = hello world"
 ```
  curl -X POST \
@@ -18,7 +18,7 @@ expected: "name = hello world"
      -H 'content-type: multipart/form-data;' \
      -F key=value
   ```
-actual:   "name = hello_world"
+actual:   "name = hello_world"\
 expected: "name = hello_world"
 
 key name has duplicated value if it contains a space (%20) character;
